@@ -1,0 +1,25 @@
+import streamlit as st
+
+# Título de la aplicación
+st.title("Sistema de Clasificación Triage")
+
+# Entradas de usuario
+frecuencia_cardiaca = st.sidebar.number_input("Frecuencia cardíaca (latidos/min):", min_value=0, max_value=300)
+# ... (otros parámetros de entrada)
+
+# Función de clasificación
+def determinar_nivel_triage(...):
+    # Condiciones de clasificación
+    if ...:
+        return 1, "Emergencia crítica."
+    elif ...:
+        return 2, "Riesgo elevado."
+    # (Otros niveles)
+    return 5, "Consulta ambulatoria."
+
+# Cálculo del nivel de triage
+nivel, descripcion = determinar_nivel_triage(...)
+
+# Mostrar resultados
+st.header(f"Nivel de Triage: {nivel}")
+st.write(descripcion)
